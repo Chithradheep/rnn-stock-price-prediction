@@ -27,7 +27,7 @@ from sklearn.preprocessing import MinMaxScaler
 from keras import layers
 from keras.models import Sequential
 
-dataset_train = pd.read_csv('trainset.csv')
+dataset_train = pd.read_csv('/content/trainset.csv')
 
 dataset_train.columns
 
@@ -64,7 +64,7 @@ model.compile(optimizer='adam', loss='mse')
 model.fit(X_train1,y_train,epochs=25, batch_size=64)
 
 model.summary()
-dataset_test = pd.read_csv('testset.csv')
+dataset_test = pd.read_csv('/content/testset.csv')
 test_set = dataset_test.iloc[:,1:2].values
 test_set.shape
 dataset_total = pd.concat((dataset_train['Open'],dataset_test['Open']),axis=0)
